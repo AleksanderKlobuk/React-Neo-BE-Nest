@@ -9,7 +9,7 @@ const users = [{name:"me", email:"al@al.com",password:"123" }];
 @Injectable()
 export class UsersService{
 
-    constructor(@InjectModel("Product")private readonly userModel: Model<UserInterface>) {}
+    constructor(@InjectModel("Users")private readonly userModel: Model<UserInterface>) {}
 
 
 
@@ -19,7 +19,7 @@ export class UsersService{
     async add(name:string, email:string, password:string){
         const newUser = new this.userModel ({name:name,email:email,password:password});
         const result = await newUser.save();
-        console.log(result)
+        /*console.log(result)*/
         return "userID";
     }
 
