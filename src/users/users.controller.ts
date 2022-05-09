@@ -19,6 +19,5 @@ constructor (private readonly userService: UsersService){}
     @UseGuards(JwtAuthGuard)
     async getUser(@CurrentUser() user:UserResponse): Promise<UserResponse>{
         return user;
-        
     }
 }
